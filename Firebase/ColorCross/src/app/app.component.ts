@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import {Injectable} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { initializeApp, database, auth } from 'firebase';
+import { environment } from '../environments/environment';
+import * as firebase from 'firebase';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(){
+    firebase.initializeApp(environment.firebase)
+  }
+
 }
