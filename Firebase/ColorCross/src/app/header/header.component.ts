@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  showLogout = false;
+
+  constructor(private user: UserService) {
+    if(user.getUserLoggedIn){
+      this.showLogout = true;
+    }
+  }
 
   ngOnInit() {
   }

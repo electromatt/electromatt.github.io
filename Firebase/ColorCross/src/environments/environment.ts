@@ -6,8 +6,8 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBZtBO1fx0Upmp7nrZ_hNitMCg7mnYyzG4",
-    authDomain: "colorcross-7201b.firebaseapp.com",
+    apiKey: "AIzaSyBDcX4KKW7lu1G9xIojV8USbfaRx1HFThY",
+    authDomain: "firebase.mattdruckhammer.com",
     databaseURL: "https://colorcross-7201b.firebaseio.com",
     projectId: "colorcross-7201b",
     storageBucket: "colorcross-7201b.appspot.com",
