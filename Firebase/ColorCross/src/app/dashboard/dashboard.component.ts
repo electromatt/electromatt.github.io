@@ -8,7 +8,6 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent {
   // itemsRef: AngularFireList<any>;
@@ -19,13 +18,12 @@ export class DashboardComponent {
   brightness: number;
 
   constructor(db: AngularFireDatabase, user: UserService) {
-    // Firebase Demo
-    // this.itemsRef = db.list(user.getUserInfo());
-    // this.items = this.itemsRef.snapshotChanges().map(actions => {
-    //   return actions.map(a => ({ key: a.payload.key, ...a.payload.val() }));
-    // });
-    this.itemRef = db.object(user.getUserInfo());
-    this.item = this.itemRef.valueChanges();
+    if(user.afAuth != null){
+      this.itemRef = db.object(user.userId);
+      this.item = this.itemRef.valueChanges();
+    } else{
+      console.log('not logged in');
+    }
 
     this.item.subscribe( item => {
       this.color = item.color,

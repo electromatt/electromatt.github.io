@@ -18,7 +18,9 @@ import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: LoginFormComponent },
-  { path: 'dashboard', canActivate: [AuthguardGuard], component: DashboardComponent },
+  { path: 'dashboard', 
+    canActivate: [AuthguardGuard],
+    component: DashboardComponent },
 ]
 
 

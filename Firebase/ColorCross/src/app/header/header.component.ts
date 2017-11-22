@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UserService } from '../user.service';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +13,10 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  showLogout = false;
+  constructor(db: AngularFireDatabase, private user: UserService) {
 
-  constructor(private user: UserService) {
-    if(user.getUserLoggedIn){
-      this.showLogout = true;
-    }
   }
 
   ngOnInit() {
   }
-
 }
