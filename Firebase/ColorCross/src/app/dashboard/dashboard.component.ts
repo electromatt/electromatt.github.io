@@ -29,17 +29,17 @@ export class DashboardComponent {
       this.color = item.color,
       this.brightness = item.brightness
     });
-    
   }
-  save(newColor: string) {
+  
+  save1(newColor: string): any {
+    this.itemRef.update({ color: newColor });
+    return true;
+  }
+  save2(newColor: string, hex: string) {
+    this.itemRef.update({ hex: hex });
     this.itemRef.update({ color: newColor });
   }
   update(newBrightness: number) {
     this.itemRef.update({ brightness: newBrightness });
-  }
-  getColor(){
-  }
-  // updateItem(key: string, newText: string) {
-  //   this.itemsRef.update(key, { original: newText });
-  // }
+  }  
 }

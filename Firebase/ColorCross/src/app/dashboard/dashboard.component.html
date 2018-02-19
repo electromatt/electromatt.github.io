@@ -1,25 +1,29 @@
 <br/>
 <div class="row marketing">
   <input type="range" min="0" max="255" [value]="brightness" id="brightness" #ref (change)="update(ref.value)">
-  <!-- <button class = "btn" (click)="save(newColor.value)">Set Color</button> -->
 </div>
 <br/>
 <div class="row">
     <div class="col-xs"></div>
     <div class="col-sm">
-        <div (click)="save('red')" class="p-3 mb-2 box c1"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'red'"></i></div></div>
-        <div (click)="save('green')" class="p-3 mb-2 box c2"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'green'"></i></div></div>
-        <div (click)="save('blue')" class="p-3 mb-2 box c3"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'blue'"></i></div></div>
-        <div (click)="save('gold')" class="p-3 mb-2 box c4"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'gold'"></i></div></div>
+        <div (click)="save2('red','#ff0000')" class="p-3 mb-2 box c1"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'red'"></i></div></div>
+        <div (click)="save2('green','#008000')" class="p-3 mb-2 box c2"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'green'"></i></div></div>
+        <div (click)="save2('blue','#0000ff')" class="p-3 mb-2 box c3"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'blue'"></i></div></div>
+        <div (click)="save2('gold','#FFD700')" class="p-3 mb-2 box c4"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'gold'"></i></div></div>
     </div>
     <div class="col-sm">
-        <div (click)="save('purple')" class="p-3 mb-2 box c5"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'purple'"></i></div></div>
-        <div (click)="save('white')" class="p-3 mb-2 box c6"><div style="height:48px"><i class="fa fa-3x" [class.fa-check-circle]="color == 'white'"></i></div></div>
-        <div (click)="save('rainbow')" class="p-3 mb-2 box rainbow"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'rainbow'"></i></div></div>
-        <div (click)="save('pulse')" class="p-3 mb-2 box pulse"><div style="height:48px"><i class="fa fa-3x" [class.fa-check-circle]="color == 'pulse'"></i></div></div>
+        <div (click)="save2('purple','#800080')" class="p-3 mb-2 box c5"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'purple'"></i></div></div>
+        <div (click)="save2('white','#ffffff')" class="p-3 mb-2 box c6"><div style="height:48px"><i class="fa fa-3x" [class.fa-check-circle]="color == 'white'"></i></div></div>
+        <div (click)="save1('rainbow')" class="p-3 mb-2 box rainbow"><div style="height:48px"><i class="fa fa-inverse fa-3x" [class.fa-check-circle]="color == 'rainbow'"></i></div></div>
+        <div (click)="save1('pulse')" class="p-3 mb-2 box pulse"><div style="height:48px"><i class="fa fa-3x" [class.fa-check-circle]="color == 'pulse'"></i></div></div>
     </div>
     <div class="col-xs"></div>
 </div>
-  <!-- <button class = "btn" (click)="update(newBrightness.value)">Update Brightness</button> -->
 
 
+  
+  
+  
+  
+  
+  

@@ -24,11 +24,13 @@ export class UserService {
         // etc.
       } else {
         this.isUserLoggedIn = false;       
+        //this.router.navigate(['']);
       }
   });
   }
   
   loginUser(email,password){
+    this.isUserLoggedIn = true;
     firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function(error) {
       // Handle Errors here.
@@ -45,7 +47,8 @@ export class UserService {
   }
   logoutUser(){
     firebase.auth().signOut().then(function() {
-      // Sign-out successful.
+      this.isUserLoggedIn = false;       
+      this.router.navigate(['']);
     }).catch(function(error) {
       // An error happened.
     });
