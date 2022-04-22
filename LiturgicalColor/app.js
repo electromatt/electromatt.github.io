@@ -1,10 +1,8 @@
 /*
 Name: Liturgical Color
-URI: http://mattdruckhammer.com
 Description: Get the current liturgical color for the day
-Version: 1.2
+Version: 1.3
 Author: Matthew Druckhammer
-Author URI: http://mattdruckhammer.com
 License: GPL2
 */
 
@@ -12,6 +10,7 @@ function getColor() {
 
     today = moment(new Date());
     year = today.format('YYYY');
+    today = today.date;
     epiphany_date = year + '-01-06';
     reformation_date = year + '-10-31';
     thanksgiving_date = year + '-11-01';
@@ -24,27 +23,27 @@ function getColor() {
     purple = "#3e3254";
     black = "#333333";
 
-    easter = Easter(year);
-    christmas = new Date(year, 11, 25);
-    end_year = moment().endOf('year');
-    new_year = moment().startOf('year').add(1, 'y');
-    fourth_advent_sunday = getPreviousSunday(christmas);
-    first_advent_sunday = addDaysWithDate(fourth_advent_sunday, -21);
-    epiphany = moment(epiphany_date);
-    first_sunday_after_epiphany = getNextSunday(epiphany);
-    ash_wednesday = addDaysWithDate(easter, -46);
-    first_lent = addDaysWithDate(ash_wednesday, 4);
-    transfiguration_sunday = addDaysWithDate(getPreviousSunday(first_lent), -21);
-    palm_sunday = addDaysWithDate(easter, -7);
-    maundy_thursday = addDaysWithDate(easter, -3);
-    good_friday = addDaysWithDate(easter, -2);
-    pentecost = addDaysWithDate(easter, 49);
-    trinity_sunday = getNextSunday(pentecost);
-    first_sunday_after_trinity = getNextSunday(trinity_sunday);
-    reformation_day = moment(reformation_date);
-    all_saints_day = getNextSunday(reformation_day);
-    last_sunday = getPreviousSunday(first_advent_sunday);
-    thanksgiving = moment(thanksgiving_date).isoWeekday(4).add(3, 'w');
+    easter = Easter(year).date;
+    christmas = new Date(year, 11, 25).date;
+    end_year = moment().endOf('year').date;
+    new_year = moment().startOf('year').add(1, 'y').date;
+    fourth_advent_sunday = getPreviousSunday(christmas).date;
+    first_advent_sunday = addDaysWithDate(fourth_advent_sunday, -21).date;
+    epiphany = moment(epiphany_date).date;
+    first_sunday_after_epiphany = getNextSunday(epiphany).date;
+    ash_wednesday = addDaysWithDate(easter, -46).date;
+    first_lent = addDaysWithDate(ash_wednesday, 4).date;
+    transfiguration_sunday = addDaysWithDate(getPreviousSunday(first_lent), -21).date;
+    palm_sunday = addDaysWithDate(easter, -7).date;
+    maundy_thursday = addDaysWithDate(easter, -3).date;
+    good_friday = addDaysWithDate(easter, -2).date;
+    pentecost = addDaysWithDate(easter, 49).date;
+    trinity_sunday = getNextSunday(pentecost).date;
+    first_sunday_after_trinity = getNextSunday(trinity_sunday).date;
+    reformation_day = moment(reformation_date).date;
+    all_saints_day = getNextSunday(reformation_day).date;
+    last_sunday = getPreviousSunday(first_advent_sunday).date;
+    thanksgiving = moment(thanksgiving_date).isoWeekday(4).add(3, 'w').date;
 
     if (today >= first_advent_sunday && today < christmas) {
         return blue;
@@ -89,6 +88,9 @@ function getColor() {
         return gold;
     }
     if (today >= getNextSunday(all_saints_day) && today < first_advent_sunday) {
+        return green;
+    }
+    else {
         return green;
     }
 }
